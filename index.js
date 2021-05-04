@@ -8,6 +8,9 @@ const cors=require('cors')
 const app =express()
 require('./app/config/connection')
 
+app.use('/', require) => {
+  res.send('Bienvenido');
+});
 
 app.use(cors())
 app.use(express.urlencoded({extended:true}))
