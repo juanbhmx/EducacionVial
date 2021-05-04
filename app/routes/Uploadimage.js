@@ -76,22 +76,6 @@ router.get('/delete/:id', async(req,res)=>{
     }
 })
 
-router.post('/UpdatePicture',uploader.single('file'),async(req,res)=>{
-  const id=req.body.id
-  const updateDate={
-   fileName:req.body.name,
-   descripcion:req.body.descripcion
-  }
-  Image.findByIdAndUpdate(id,{$set:updateDate})
-  .then(()=>{
-      res.json({
-          message:"actualizado"
-      })
-  })
-})
-
-
-
 
 
 module.exports=router
